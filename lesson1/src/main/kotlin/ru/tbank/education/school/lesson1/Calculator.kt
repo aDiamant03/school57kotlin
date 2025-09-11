@@ -1,18 +1,34 @@
 package ru.tbank.education.school.lesson1
 
-/**
- * Метод для вычисления простых арифметических операций.
- */
-fun calculate(a: Double, b: Double, operation: OperationType): Double? {
-    TODO()
-}
+fun main(){
+    var s = "5 + 3"
+    while (s != "exit") {
+        println("""Введите через пробел. Пример: 5 + 3.
+            |Для выхода введите exit.
+        """.trimMargin())
+        s = readln()
+        val m = s.split(" ")
+        val a = m[0].toInt()
+        val b = m[2].toInt()
+        val z = m[1]
+        val r = when (z) {
+            "exit" -> break
+            "+" -> a + b
+            "-" -> a - b
+            "*" -> a * b
+            "/" -> a.toDouble() / b.toDouble()
+            "**" -> {
+                var w: Long = 1
+                for (i in 0..<b) {
+                    w *= a
+                }
+                w
+            }
 
-/**
- * Функция вычисления выражения, представленного строкой
- * @return результат вычисления строки или null, если вычисление невозможно
- * @sample "5 * 2".calculate()
- */
-@Suppress("ReturnCount")
-fun String.calculate(): Double? {
-    TODO()
+            else -> {
+                println("Функция отсутствует")
+            }
+        }
+        println(r)
+    }
 }
