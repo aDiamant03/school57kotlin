@@ -16,7 +16,12 @@ fun main(){
             "+" -> a + b
             "-" -> a - b
             "*" -> a * b
-            "/" -> a.toDouble() / b.toDouble()
+            "/" -> {
+                if (b==0)
+                    "null"
+                else
+                    a.toDouble() / b.toDouble()
+            }
             "**" -> {
                 var w: Long = 1
                 for (i in 0..<b) {
