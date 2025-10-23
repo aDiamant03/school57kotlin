@@ -15,6 +15,7 @@ package ru.tbank.education.school.lesson7.practise.task3
  * ```
  */
 
+data class User(val name: String, val roles: Set<String>)
 
 // Инфиксная функция для проверки наличия роли
-infix fun User.hasRole(role: String): Boolean = TODO()
+infix fun User.hasRole(role: String): Boolean = this.roles.contains(role)
